@@ -22,8 +22,13 @@ function createEmployee(personalInfo, associatedWith) {
 }
 
 function isManager(id) {
-  // seu código aqui
+  const listManagers = employees.map((employee) => employee.managers);
+  return listManagers.some((idOfManager) => idOfManager.includes(id));
+  // Fonte sobre a função 'includes()':
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 }
+
+isManager();
 
 function addEmployee(id, firstName, lastName, managers, responsibleFor) {
   // seu código aqui
